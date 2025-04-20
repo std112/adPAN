@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FOUR OF ACES PANEL</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Rajdhani:wght@600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Rajdhani', sans-serif;
+      background: black;
+      overflow: hidden;
+      color: #00ff00;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .code-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    .login-container {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px #00ff00;
+    }
+
+    input[type="text"], input[type="password"] {
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background-color: #111;
+      color: #00ff00;
+    }
+
+    button {
+      padding: 10px;
+      background: #00ff00;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .panel {
+      position: relative;
+      z-index: 2;
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      background: rgba(0, 0, 0, 0.9);
+    }
+
+    .intro {
+      color: #00ff00;
+      font-family: monospace;
+      font-size: 18px;
+      white-space: pre-wrap;
+      text-align: center;
+      padding: 20px;
+      max-width: 80%;
+    }
+
+    .title {
+      font-size: 3em;
+      text-align: center;
+      color: #00ff00;
+      text-shadow: 0 0 10px #00ff00, 0 0 20px #0f0;
+      margin-bottom: 20px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .button-container button {
+      background: #111;
+      border: 2px solid #00ff00;
+      color: #00ff00;
+      font-size: 18px;
+      text-shadow: 0 0 5px #00ff00;
+      padding: 15px 25px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+    }
+
+    .button-container button:hover {
+      background-color: #00ff00;
+      color: black;
+      transform: scale(1.1);
+      box-shadow: 0 0 15px #00ff00;
+    }
+  </style>
+</head>
+<body>
+  <audio id="clickSound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
+  <div class="code-background">
+    <canvas id="matrix"></canvas>
+  </div>
+  <div class="login-container" id="login">
+    <form onsubmit="event.preventDefault(); playSound(); x();">
+      <input type="text" id="u" placeholder="Username" required>
+      <input type="password" id="p" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <div class="panel" id="panel">
+    <div class="intro" id="intro"></div>
+    <div class="title" style="display: none;">FOUR OF ACES PANEL</div>
+    <div class="button-container" style="display: none;">
+      <button onclick="playSound(); openLink('https://garbagecollertors.appeal.today/')">Market Purchase History</button>
+      <button onclick="playSound(); openLink('https://checkrefund.appeal.today/')">Refund Sent to Client</button>
+      <button onclick="playSound(); openLink('https://admin.appeal.today/')">Refund Sent to Client ADMIN PANEL</button>
+      <button onclick="playSound(); openLink('https://checkyour.teamfortressreputation.today/')">Rep Checker Can be sent to client</button>
+<button onclick="playSound(); openLink('https://beeg.com/')">BAN</button>
+    </div>
+  </div>
+  <script>
+    const a = atob("QURNSU4=");
+    const b = atob("QURNSU4x");
+    function x() {
+      const u = document.getElementById('u').value;
+      const p = document.getElementById('p').value;
+      if (u === a && p === b) {
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('panel').style.display = 'flex';
+        y("Welcome to FOUR OF ACES...\nEstablishing connection...\nAccessing panel... ✅", () => {
+          document.querySelector('.title').style.display = 'block';
+          document.querySelector('.button-container').style.display = 'flex';
+        });
+      } else {
+        alert('Invalid credentials');
+      }
+    }
+    function y(t, c) {
+      let i = 0;
+      const s = 50;
+      const e = document.getElementById('intro');
+      e.innerHTML = '';
+      (function f() {
+        if (i < t.length) {
+          e.innerHTML += t.charAt(i);
+          i++;
+          setTimeout(f, s);
+        } else if (c) {
+          c();
+        }
+      })();
+    }
+    function openLink(u) {
+      window.open(u, '_blank');
+    }
+    function playSound() {
+      document.getElementById('clickSound').play();
+    }
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+    const letters = '01';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array.from({ length: columns }, () => 1);
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#0F0';
+      ctx.font = fontSize + 'px monospace';
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+    setInterval(drawMatrix, 33);
+  </script>
+</body>
+</html>
